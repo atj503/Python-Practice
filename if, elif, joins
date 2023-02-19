@@ -1,0 +1,37 @@
+my_name = input("What is your name?")
+current_day = input("What day is it?")
+cats_or_dogs = input("Do you like cats or dogs?")
+flat_earth = input("Is the Earth flat?")
+print()
+if my_name == "Alex" or my_name == "alex":
+  print("Hi Alex, you look great today.")
+else:
+  print("Where is Alex?")
+if current_day == "Sunday" or current_day == "sunday":
+  print("Too bad football is over")
+elif current_day == "Monday" or current_day == "monday":
+  print("Garfield's least favorite day.")
+elif current_day == "Tuesday" or current_day == "tuesday":
+  print("Taco Tuesday!")
+elif current_day == "Wednesday" or current_day == "wednesday":
+  print("HUMP DAY")
+elif current_day == "Thursday" or current_day == "thursday":
+  print("Almost there")
+elif current_day == "Friday" or current_day == "friday":
+  print("TGIF")
+elif current_day == "Saturday" or current_day == "saturday":
+  print("Lets go weekend!")
+else:
+  print("That's whack")
+if cats_or_dogs == "cats" or cats_or_dogs == "Cats":
+  print("Right answer")
+elif cats_or_dogs == "dogs" or cats_or_dogs == "Dogs":
+  print("WOOF")
+else:
+  print("Turtles!")
+if flat_earth == "Yes" or flat_earth == "yes":
+  print("yikes!")
+elif flat_earth == "No" or flat_earth == "no":
+  print("woooo i thought you were gonna be crazy for a second")
+else:
+  print("Sounds like you don't know")
