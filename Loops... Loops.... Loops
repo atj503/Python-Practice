@@ -4,3 +4,17 @@ while counter <= 1000:
   print(counter)
   counter +=pi 
   counter +=pi*2
+
+--first loop game
+exit = "no"
+while exit == "no":
+  animal = input("What kind of animal do you like?")
+  
+  if animal == "Cow" or animal =="cow":
+    print("MOOOO")
+  elif animal == "Cat" or animal =="cat":
+    print("MEOW")
+  else:
+    print("bahumbug")
+  exit = input("Should I stop?: ")
+    
