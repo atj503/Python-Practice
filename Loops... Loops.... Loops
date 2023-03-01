@@ -18,3 +18,28 @@ while exit == "no":
     print("bahumbug")
   exit = input("Should I stop?: ")
     
+
+
+# Created a guess the number game
+print("Guess a number between 1-1000")
+print()
+guessers_guesses = 0
+correct_number = 444
+while True:
+  guesser = int(input("What number do you guess?"))
+  if guesser < 1:
+    print("This is not fun, goodbye.")
+    exit()
+  if guesser < correct_number:
+    print("Nope, Too low!")
+    guessers_guesses +=1
+  elif guesser > correct_number:
+    print("Nope, Too high!")
+    guessers_guesses += 1
+    continue
+  elif guesser == correct_number:
+    print("Wow! You got it!")
+    break
+  else:
+    print("I don't compute")
+print("You made", guessers_guesses,"attempts before you got it.")
