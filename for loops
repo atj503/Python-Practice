@@ -1,0 +1,5 @@
+# creating a quick code to determine what 5% interest on $1000 looks like after 10 years
+total = 1000
+for i in range (10):
+  total *= 1.05
+  print(total)
