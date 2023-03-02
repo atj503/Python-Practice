@@ -20,7 +20,7 @@ while exit == "no":
     
 
 
-# Created a guess the number game
+# Day 18 # Created a guess the number game
 print("Guess a number between 1-1000")
 print()
 guessers_guesses = 0
@@ -38,6 +38,34 @@ while True:
     guessers_guesses += 1
     continue
   elif guesser == correct_number:
+    print("Wow! You got it!")
+    break
+  else:
+    print("I don't compute")
+print("You made", guessers_guesses,"attempts before you got it.")
+
+# Day 22 # Turned the guess a number game into guess a random number game by importing the randint library
+import random
+
+
+print("Guess a number between 1-1000")
+print()
+guessers_guesses = 0
+myNumber = random.randint(1, 1000000)
+while True:
+  
+  guesser = int(input("What number do you guess?"))
+  if guesser < 1:
+    print("This is not fun, goodbye.")
+    exit()
+  if guesser < myNumber:
+    print("Nope, Too low!")
+    guessers_guesses +=1
+  elif guesser > myNumber:
+    print("Nope, Too high!")
+    guessers_guesses += 1
+    continue
+  elif guesser == myNumber:
     print("Wow! You got it!")
     break
   else:
