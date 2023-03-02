@@ -3,3 +3,16 @@ total = 1000
 for i in range (10):
   total *= 1.05
   print(total)
+
+
+# day 20 # did a number increment game using increment counting with for loops
+
+print("Do you want to play a game? (Saw voice)")
+print()
+print("Lets pick some numbers")
+starting_number = int(input("What would you start with?"))
+end_number = int(input("What number is last?"))
+increment = int(input("What increments do we count by?"))
+
+for i in range(starting_number, end_number, increment):
+  print(i)
