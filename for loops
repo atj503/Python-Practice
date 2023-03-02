@@ -16,3 +16,26 @@ increment = int(input("What increments do we count by?"))
 
 for i in range(starting_number, end_number, increment):
   print(i)
+
+# Day 21 # did a multiplication factors game. Using for loops and range to multiple the variable. did 1-10 factors.
+print("MATH GAME")
+
+variable = int(input("What number do you choose?"))
+
+print("Alright, let's do mulitples of", variable, "up to 10.")
+counter = 0
+
+for i in range(1,11):
+  correct_answer = i * variable
+  print(i,"x",variable)
+  answer = int(input("> "))
+  if answer == correct_answer:
+    print("Now that's some math!")
+    counter += 1
+  else:
+    print("That is WRONG!", correct_answer, " is the answer")
+
+if counter == 10:
+  print("Perfect Score! ")
+else:
+  print("Not bad, you got", counter, "right out of 10.")
