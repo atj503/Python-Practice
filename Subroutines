@@ -1,0 +1,16 @@
+#creating subroutines# this was a sample of a username and login prompt
+
+
+def login():
+  while True:
+    username = input("What is your username?: ")
+    password = input("What is your password? ")
+    if username == "Alex" and password == "mustachio44":
+      print("Welcome Alex!")
+      break
+    else:
+      print("WRONG!")
+      continue
+    
+print("REPLIT LOGIN SYSTEM")
+login()
