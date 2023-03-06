@@ -14,3 +14,17 @@ def login():
     
 print("REPLIT LOGIN SYSTEM")
 login()
+
+##making a subroutine "game" where a user picks how many sides a dice has and we roll the dice##
+
+import random
+
+dice_sides =  int(input("How many sides does your dice have? "))
+play_game = "yes"
+
+def roll_dice(dice_sides):
+  print("You rolled",
+random.randint(1,dice_sides))
+while play_game == "yes":
+    roll_dice(dice_sides)
+    play_game = input("Roll again?")
