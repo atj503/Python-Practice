@@ -28,3 +28,32 @@ random.randint(1,dice_sides))
 while play_game == "yes":
     roll_dice(dice_sides)
     play_game = input("Roll again?")
+
+
+## roll a 6 sided and 8 sided dice then multiple for health stat.  ##
+
+import random
+
+
+dice_sides =  int(input("How many sides does your dice have? "))
+play_game = "yes"
+
+def roll_dice(dice_sides):
+  result = random.randint(5,dice_sides)
+  return result 
+def roll_6_8():
+  roll_6_die = roll_dice(6)
+  roll_8_die = roll_dice(8)
+  health = roll_6_die * roll_8_die
+  return health
+  
+print("Character Stats Generator")
+
+
+haveACharacter = "yes"
+
+while haveACharacter == "yes":
+  warrior = input( "What is the name of your warrior? ")
+  health = str(roll_6_8())
+  print("Their health is ", health,"hp" ) 
+  haveACharacter = input("Want to create another character?")
