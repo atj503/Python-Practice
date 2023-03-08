@@ -1,0 +1,35 @@
+## Day 27 Character builder using sub routines, while True loop ##
+
+import random, os, time
+
+def roll_dice(side):
+  result = random.randint(1,side)
+  return result
+
+def health():
+  health_stat = round(((roll_dice(5)* roll_dice(9))/3)+25,2)
+  return health_stat
+
+def strength():
+  strength_stat = round(((roll_dice(3)*roll_dice(14)/3+20)),2)
+  return strength_stat
+
+
+while True:
+  print("Character Building Time")
+  print()
+  name = input("Name: ")
+  type = input("Are you a Dogman, Centaur, or Manbearpig?")
+  print(name)
+  print("Health: ",health())
+  print("Strength: ", strength())
+  print()
+  print("Glory to the gods!",name)
+  print()
+  again = input("Again: ")
+  if again == "No" or again == "no":
+    break
+  time.sleep(1)
+  os.system("clear")
+  
+  
