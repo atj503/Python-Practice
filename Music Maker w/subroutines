@@ -1,0 +1,32 @@
+from replit import audio
+import os, time               #import the neccessary libraries
+
+
+def play():                 ### define the sub routine
+  source = audio.play_file('audio.wav')     ##define the 'source' in this case it is the audio file.
+  source.paused = False # unpause the playback        ## define 'source_paused' in this case, making a true statement that pauses the music if you press 2
+  while True:                                     #beginning of true statement
+    stop_playback = int(input("Press 2 anytime to stop playback and go back to the menu : ")) # giving the user the option to stop playback
+    if stop_playback == 2:      ## defining 'stop_playback' to == 2
+      source.paused = True      ## pauses the file if 'True' 
+      return          ## let's go back from this play() subroutine
+    else: 
+      continue
+  
+while True:
+  os.system("clear")              ##3 clearing the OS system 
+  print("🎵 MyPOD Music Player ") 
+  time.sleep(1)                   ### time stops the next commmand for a selected time. (1 = 1 second)
+  print("Press 1 to Play")        #### printing the potential commands
+  time.sleep(1)               
+  print("Press 2 to Exit")
+  time.sleep(1)                                   
+  print("Press anything else to see the menu again")
+  userInput = int(input())              ## creating the user input prompt. uses int cause the answer is a number
+  if userInput == 1:                    ## 1 = play
+    print("Playing some proper tunes!")
+    play()                            ## calls the previous play function 
+  elif userInput == 2:            ### exits the subroutine
+    exit()
+  else :                        ### repeats the menu again.
+    continue
