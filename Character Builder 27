@@ -33,3 +33,106 @@ while True:
   os.system("clear")
   
   
+## Day 28 working on the Character Builder. this time assigned values for health and strength so two characters can fight each other. #
+
+import random, os, time
+
+def roll_dice(side):
+  result = random.randint(1,side)
+  return result
+
+def health():
+  health_stat = round(((roll_dice(5)* roll_dice(9))/3)+25,2)
+  return health_stat
+
+def strength():
+  strength_stat = round(((roll_dice(3)*roll_dice(14)/3+20)),2)
+  return strength_stat
+
+
+while True:
+  print("Character Building Time")
+  print()
+  name = input("Name: ")
+  type = input("Are you a Dogman, Centaur, or Manbearpig?\n")
+  name_health = health()
+  name_strength = strength()
+  print(name)
+  print("Health:\n ",name_health)
+  print("Strength:\n ", name_strength)
+  print()
+  print("Glory to the gods!",name)
+  print()
+  print("Your Opponent Is:")
+  print()
+  name_2 = input("Name: ")
+  type_2 = input("Are you a Dogman, Centaur, or Manbearpig?\n")
+  name_2_health = health()
+  name_2_strength = strength()
+  print(name_2)
+  print("Health:\n ",name_2_health)
+  print("Strength:\n ", name_2_strength)
+  print()
+  print("Glory to the gods!",name_2)
+  print()
+  break
+
+ready_to_battle = input("Are you ready to start the battle? (y/n): ")
+if ready_to_battle.lower() == 'y':
+
+  name_score = 0
+  name_2_score = 0
+  round = 1
+  winner = None
+
+while True:
+  time.sleep(1)
+  os.system("clear")
+
+  name_dice = roll_dice(6)
+  name_2_dice = roll_dice(6)
+
+  difference = abs(name_strength - name_2_strength) + 1
+  
+  if name_dice > name_2_dice:
+    name_2_health -= difference
+    if round == 1:
+      print(name,"Strikes the first blow")
+      print(name_2, "recieves", difference, "damage.")
+    else:
+      print(name, "wins round", round)
+  elif name_dice < name_2_dice:
+    name_health -= difference
+    if round == 1:
+      print(name,"Strikes the first blow")
+      print(name_2, "recieves", difference, "damage.")
+    else:
+      print(name_2, "wins round", round)
+  else:
+    print("Time for round", round)
+
+  print()
+  print()
+  print(name)
+  print("HEALTH:\n", name_health)
+  print()
+  print(name_2)
+  print("HEALTH:\n", name_2_health)
+  print()
+
+  if name_health <= 0:
+    print(name,"has died. Long live", name_2)
+    winner = name_2
+    break
+  elif name_2_health <= 0:
+    print(name_2,"has died. Long live", name)
+    winner = name
+    break  
+  else:
+    print("They fight to the death. On to the next round!")
+    round += 1
+
+time.sleep(5)
+os.system("clear")
+print()
+print("The winner is \n", winner, "Defeating \n", name_2, "in", round, "rounds")
