@@ -1,0 +1,27 @@
+## Day 30, learning format and f-strings
+
+print("30 Day Challenge Survey")
+
+
+
+for i in range(1,31):
+  day = "Day", i
+  question = input(f" What did you think of {day}?")
+  
+  print(f"You thought {day} was", question)
+
+--version 2 
+print("30 Day Challenge Survey")
+
+
+
+
+for i in range(1,31):
+  question = input(f" What did you think of {i}?:\n")
+  print()
+  text = f"Your opinion of Day {i} was"
+  print()
+  print(f"{text:^40}")
+  print(f"{question:^40}")
+
+  print()
