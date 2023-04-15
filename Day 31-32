@@ -48,3 +48,14 @@ text = "Username: "
 username = input(f"{color_change('white')}{text:^35}")
 text = "Password: "
 username = input(f"{color_change('white')}{text:^35}")
+
+
+*** Day 32 lists ***
+
+create a list of "hello" in different languages. Use randint to call a random "hello" on command
+
+import random
+
+index = random.randint(0,6)
+hello = ["hello", "konichiwa", "guten tag", "aloha", "wassup", "yo"]
+print(hello [index])
