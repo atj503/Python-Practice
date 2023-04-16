@@ -82,3 +82,48 @@ while True:     ------- starting a while true loop to keep adding to the list
     else:
       print(f"{item} was not in the list")    ---------- if the item is not on the list, than print this response
   printList()     ------------- prints list after each loop so you can see the list. 
+  
+  
+  
+  
+  
+  *** day 34 create a spam email list******
+  
+  import os, time
+list_of_emails = []
+def prettyPrint():
+  os.system("clear") 
+  print("list_of_emails") 
+  print()
+  counter = 1 
+  for order in list_of_emails: 
+    print(f"[counter]: {email}") 
+    counter += 1 
+  time.sleep(1)
+
+def spam(max):
+  for i in range(0,max):
+    print(f"""Email{i+1}
+    Dear {listOfEmail[i]}
+It has come to our attention that you're missing out on the amazing Replit 100 days of code. We insist you do it right away. If you don't we will pass on your email address to every spammer we've ever encountered and also sign you up to the My Little Pony newsletter, because that's neat. We might just do that anyway.
+Love and hugs,
+Ian Spammington III""")
+    time.sleep(1)
+    os.system("clear")
+
+while True:
+  print("Lets Spam!")
+  menu = input("1. Email \n2: Add Email\n3. Delete Email\n4.SPAM\n> ")
+  if menu == "1":
+    email = input("Email > ")
+    list_of_emails.append(email)
+  elif menu =="2":
+    email = input ("delete email> ")
+    if email in list_of_emails:
+      list_of_emails.remove(email)
+  elif menu == "3": 
+    prettyPrint()
+  elif menu =="4":
+    spam(10)
+  time.sleep(1)
+  os.system("clear")
