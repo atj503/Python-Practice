@@ -59,3 +59,26 @@ import random
 index = random.randint(0,6)
 hello = ["hello", "konichiwa", "guten tag", "aloha", "wassup", "yo"]
 print(hello [index])
+
+*** Day 33, more lists ***
+
+
+myPartyList = []  - creating list
+
+def printList():  ----- defining the function of printing the list
+  print() 
+  for item in myPartyList:
+    print(item)
+  print() 
+while True:     ------- starting a while true loop to keep adding to the list
+  menu = input("add or remove? :" )       ---- create a menu to determine if you are adding or removing things from the list
+  if menu == "add":
+    item = input("Who should I add to the party list?: ")
+    myPartyList.append(item)        ---------- appends the list by adding an item
+  elif menu == "remove":
+    item = input("Who should I remove from the party list?: ")
+    if item in myPartyList:     ------- check to see if item is in list
+      myPartyList.remove(item)      ------- remove item from list it it is there
+    else:
+      print(f"{item} was not in the list")    ---------- if the item is not on the list, than print this response
+  printList()     ------------- prints list after each loop so you can see the list. 
