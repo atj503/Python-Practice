@@ -89,41 +89,43 @@ while True:     ------- starting a while true loop to keep adding to the list
   
   *** day 34 create a spam email list******
   
-  import os, time
-list_of_emails = []
-def prettyPrint():
-  os.system("clear") 
-  print("list_of_emails") 
+import os, time     ----- import os and time
+list_of_emails = []   ---- create list
+def prettyPrint():        ---- defining prettyprint function
+  os.system("clear")        -------- clears screen prior to printing
+  print("list_of_emails")        ---- print list
   print()
-  counter = 1 
-  for order in list_of_emails: 
-    print(f"[counter]: {email}") 
-    counter += 1 
-  time.sleep(1)
+  counter = 1           ----- starts counter at 1
+  for email in list_of_emails:    ---- for loop that adds emails to list
+    print(f"{counter}: {email}")    ---- f string that prints that counter value and corresponding email
+    counter += 1    ---- adds 1 to the counter for each new email
+  time.sleep(1)     --- sleep timer for 1 second 
 
-def spam(max):
-  for i in range(0,max):
-    print(f"""Email{i+1}
-    Dear {listOfEmail[i]}
+def spam(max):      ------ defining new function to SPAM
+  for i in range(0,max):    ---- define the range of emails that can be used in the spam function
+    print(f"""Email{i+1}    ----- beginning of f string. use f string so that each email list can be dropped into the string
+    
+Dear {list_of_emails[i]}    ---- pulls from email list. calling 'i' goes through the list in order
 It has come to our attention that you're missing out on the amazing Replit 100 days of code. We insist you do it right away. If you don't we will pass on your email address to every spammer we've ever encountered and also sign you up to the My Little Pony newsletter, because that's neat. We might just do that anyway.
 Love and hugs,
 Ian Spammington III""")
-    time.sleep(1)
-    os.system("clear")
+    time.sleep(1)       ------ sleeps for 1 second
+    os.system("clear")      ---- clears the screen
 
-while True:
-  print("Lets Spam!")
-  menu = input("1. Email \n2: Add Email\n3. Delete Email\n4.SPAM\n> ")
-  if menu == "1":
-    email = input("Email > ")
-    list_of_emails.append(email)
-  elif menu =="2":
-    email = input ("delete email> ")
-    if email in list_of_emails:
-      list_of_emails.remove(email)
-  elif menu == "3": 
-    prettyPrint()
-  elif menu =="4":
-    spam(10)
+while True:     --- beginning of true loop
+  print("Lets Spam!") - prints words
+  menu = input("1. Add Email \n2: remove Email\n3. show Email\n4.SPAM\n> ")       ----- create input menu with 4 choices
+  if menu == "1":     ---- choice 1
+    email = input("Email > ")     ---- creates an email function to remember emails
+    list_of_emails.append(email)    ---- adds email to list_of_emails
+  elif menu =="2":        ---- choice 2
+    email = input ("delete email> ")    ------ identifies user input
+    if email in list_of_emails:   ----- identifies if email is in list_of_emails
+      list_of_emails.remove(email)    ----- removes email if found in list
+  elif menu == "3":         ------- choice 3
+    prettyPrint()       ----- calls the previous 'prettyprint' function to display email list
+  elif menu =="4":      ----- choice 4
+    spam(10)      ----- calls spam function to attach email to spam template
   time.sleep(1)
   os.system("clear")
+
