@@ -1,0 +1,37 @@
+*** Day 35 ****
+
+
+import os, time     ---- import os, time
+
+to_do_list = []     ------ create list
+
+def printList():      ----- define printlist function
+  print()
+  for items in to_do_list:        ---- prints items from to-do list
+    print(items)
+  print()
+
+while True:     ---- beginning of while true loop
+  print("What do we need to do?")       ---- print question 
+  menu = input("1. Add Item \n2  Remove Item \n3:  View List \n4:  Edit Item\n ")       ---- create menu requiring user input
+  if menu == "1":       --- defines what option 1 from the menu is
+    item = input("New Item >").title()    ---- adding a new item to the list
+    to_do_list.append(item)     --- actually adding the item
+  elif menu == "2":     ---- defines what input 2 is from list
+    item = input("Delete Item >").title()     ---- define the item function, in this case its to delete item
+    verify = input("Are you sure you want to delete item?\n")     ---- verify that you want to delete item
+    if verify [0] == "y":     ---- confrimation of verification
+        if item in to_do_list:        ---- define action for item in to-do list
+          to_do_list.remove(item)     ---- remove item from to do list
+  elif menu == "3":     ----define selection 3
+    printList()     --- print the whole list
+  elif menu == "4":     ---- define selection 4
+    item = input("What do you want to edit?\n").title()       ---- create user prompt on what item to edit
+    new = input("What do you want to change it to?\n").title()      ---- user prompt on what to change item to
+    for i in range(0,len(to_do_list)):      ---- for loop defining the range of the to do list
+      if to_do_list[i]==item:       ---- identifying the item to be changed
+        to_do_list[i]=new       ----- changing the item
+  elif menu == "delete":        ----- extra command to delete the entire list
+    to_do_list = []
+  time.sleep(1)
+  os.system("clear")
