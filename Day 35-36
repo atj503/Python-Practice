@@ -33,5 +33,30 @@ while True:     ---- beginning of while true loop
         to_do_list[i]=new       ----- changing the item
   elif menu == "delete":        ----- extra command to delete the entire list
     to_do_list = []
+    
+    
+    
+    **** Day 36 ****  - reduce errors in lists by modifying strings
+    
+    
+    rolodex = []      ---- create list
+ 
+def printList():    ---write subroutine for printing out list
+ print()
+ for name in rolodex:       ---- identify name
+   print(name)
+ print()
+ 
+while True:     ----create while true loop
+  firstName = input("What is your first name?> ").strip().capitalize()      --- ask for user input for first name
+  lastName = input("What is your last name?> ").strip().capitalize()        ---- ask for user input for last name
+  name = f"{firstName}{lastName}"       ---- use an f string so first and last name can be added easily
+  if name not in rolodex:       ---- make sure name is not already in rolodex
+   rolodex.append(name)
+  else:
+    print("Error: Duplicate Name")
+  printList()
+  
+    
   time.sleep(1)
   os.system("clear")
