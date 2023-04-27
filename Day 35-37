@@ -60,3 +60,23 @@ while True:     ----create while true loop
     
   time.sleep(1)
   os.system("clear")
+
+
+
+**** Day 37  ****** Creating a Star Wars Name Generator
+
+import os, time
+
+first_name = input("First Name >").strip()
+last_name = input("Last Name >").strip()
+
+
+maiden_name = input("Mother's Maiden Name >").strip()
+city_born = input("Where city were you born in >").strip()
+
+name = f"{first_name[:3].title()}{last_name[:3].lower()}{maiden_name[:2].title()}{city_born[-3:]}"
+
+time.sleep(1)
+os.system("clear")
+print("Welcome to the Inter-Galactic Council")
+print(name)
